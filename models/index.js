@@ -15,12 +15,12 @@ Category.hasMany(Product, {
 })
 
 // Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tags, {
+Product.belongsToMany(Tag, {
   through: { model: ProductTag, unique: false }, as: "tagged_products"
 }),
 
 // Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Products, {
+Tag.belongsToMany(Product, {
   through: { model: ProductTag, unique: false }, as: "product_tags"
 })
 
